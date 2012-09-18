@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Centerax_AutomaticBackup>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Centerax_AutomaticBackup>
+    </modules>
+</config>

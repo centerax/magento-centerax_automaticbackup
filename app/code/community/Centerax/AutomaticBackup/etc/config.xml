@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Cron model
+ *
+ * @category    Centerax
+ * @package     Centerax_AutomaticBackup
+ * @author      Centerax <cx@pablobenitez.com>
+ */
+-->
+<config>
+    <modules>
+        <Centerax_AutomaticBackup>
+            <version>1.0.0</version>
+        </Centerax_AutomaticBackup>
+    </modules>
+    <global>
+        <models>
+            <autobackup>
+                <class>Centerax_AutomaticBackup_Model</class>
+            </autobackup>
+        </models>
+        <helpers>
+            <autobackup>
+                <class>Centerax_AutomaticBackup_Helper</class>
+            </autobackup>
+        </helpers>
+    </global>
+    <crontab>
+        <jobs>
+            <cx_automatic_db_backup>
+                <schedule>
+                	<!-- Backup DB every day at 1am -->
+                	<cron_expr>0 1 * * *</cron_expr>
+                </schedule>
+                <run>
+                	<model>autobackup/cron::backup</model>
+                </run>
+            </cx_automatic_db_backup>
+        </jobs>
+    </crontab>
+</config>
